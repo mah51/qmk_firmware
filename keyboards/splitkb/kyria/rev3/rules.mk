@@ -13,4 +13,5 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-DEFAULT_FOLDER = splitkb/kyria/rev3
+# Although no rules are defined,
+# presence of this file is required for QMK to compile it.
