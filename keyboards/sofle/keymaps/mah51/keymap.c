@@ -385,7 +385,7 @@ _______, KC_EXLM,   KC_HASH,    KC_LCBR,    KC_RCBR,    KC_TILDE,  _______,     
   XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,                         KC_NUM,  KC_PSLS, KC_PAST, KC_PMNS, XXXXXXX, XXXXXXX,
   XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  KC_WSCH,  XXXXXXX,                        KC_KP_7, KC_KP_8, KC_KP_9, KC_PPLS, XXXXXXX, KC_BSPC,
   _______,  XXXXXXX,  XXXXXXX,    XXXXXXX,  KC_CALC,  XXXXXXX,                        KC_KP_4, KC_KP_5, KC_KP_6, KC_EQL,  XXXXXXX, XXXXXXX,
-  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  KC_MYCM,  TG(_NUMPAD),  XXXXXXX,     XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, KC_PENT, XXXXXXX, XXXXXXX,
+  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  KC_MYCM,  TG(_NUMPAD),  XXXXXXX, XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, KC_PENT, XXXXXXX, XXXXXXX,
                       _______,    _______,  _______,  _______,  _______,     _______, _______, KC_KP_0, KC_KP_DOT, KC_BSPC
   ),
 };
