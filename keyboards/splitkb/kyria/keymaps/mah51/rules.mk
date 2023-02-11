@@ -6,8 +6,10 @@ WPM_ENABLE = yes
 CONSOLE_ENABLE = no     # Console for debug
 AUDIO_ENABLE   = no     # Audio output
 SPACE_CADET_ENABLE = no
-EXTRAKEY_ENABLE = no
+EXTRAKEY_ENABLE = yes
 MOUSEKEY_ENABLE = no
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
 SWAP_HANDS_ENABLE = no
 LTO_ENABLE = yes
+
+
