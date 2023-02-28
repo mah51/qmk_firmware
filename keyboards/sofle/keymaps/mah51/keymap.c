@@ -1089,8 +1089,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef ENCODER_ENABLE
 
-uint32_t media_timer = 400;
-
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 1) {
         if (clockwise) {
@@ -1103,7 +1101,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 send_data[0] = 13;
                 raw_hid_send(send_data, sizeof(send_data));
             } else {
-                tap_code(KC_PGDN);
+                tap_code(KC_LEFT);
             }
         } else {
             if(shift_held) {
@@ -1115,39 +1113,29 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 send_data[0] = 12;
                 raw_hid_send(send_data, sizeof(send_data));
             } else {
-                tap_code(KC_PGUP);
+                tap_code(KC_RGHT);
             }
         }
         //left encoder
     } else if (index == 0) {
-        uint16_t mapped_code = 0;
-        if (clockwise) {
-            if(ctrl_held) {
+            if (clockwise) {
+                if(ctrl_held) {
+                tap_code(KC_PGDN);
+                } else if(fn_held || layer_state_is(_LOWER)) {
+                tap_code(KC_MNXT);
+                } else {
                 tap_code(KC_UP);
-            } else if(fn_held || layer_state_is(_LOWER)) {
-              mapped_code = KC_MNXT;
+                }
             } else {
-              mapped_code = 0;
-              tap_code(KC_RIGHT);
-            }
-        } else {
-            if(ctrl_held) {
+                if(ctrl_held) {
+                tap_code(KC_PGUP);
+                } else if(fn_held || layer_state_is(_LOWER)) {
+                tap_code(KC_MPRV);
+                } else {
                 tap_code(KC_DOWN);
-
-            } else if(fn_held || layer_state_is(_LOWER)) {
-              mapped_code = KC_MPRV;
-            } else {
-              mapped_code = 0;
-              tap_code(KC_LEFT);
+                }
             }
         }
-        if (timer_elapsed32(media_timer) > 300) {
-          if (mapped_code > 0) {
-            tap_code(mapped_code);
-          }
-        media_timer = timer_read32();
-        }
-    }
     return true;
 }
 
