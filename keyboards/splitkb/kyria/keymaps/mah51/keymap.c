@@ -250,7 +250,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             } else if (fn_held) {
                 tap_code(KC_MPRV);
             } else {
-			    tap_code(KC_DOWN);
+			    tap_code(KC_UP);
             }
 		} else {
         if (ctrl_held) {
@@ -258,7 +258,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         } else if (fn_held) {
                 tap_code(KC_MNXT);
             } else {
-			    tap_code(KC_UP);
+			    tap_code(KC_DOWN);
             }
 		}
 	}
