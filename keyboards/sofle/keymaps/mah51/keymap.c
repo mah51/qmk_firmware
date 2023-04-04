@@ -226,11 +226,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_COLEMAK_DH] = LAYOUT( \
-  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,     KC_5,                                KC_6,       KC_7,    KC_8,    KC_9,   KC_0,  KC_GRV,
-  KC_TAB,   KC_Q,   KC_W,    KC_F,    KC_P,     KC_B,                                KC_J,       KC_L,    KC_U,    KC_Y,   KC_SCLN,  KC_BSPC,
-  KC_RAISE, KC_A,   KC_R,    KC_S,    KC_T,     KC_G,                                KC_M,       KC_N,    KC_E,    KC_I,   KC_O,  KC_QUOT,
-  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_D,     KC_V,   KC_MUTEPLAY,    KC_LIGHTS,   KC_K,       KC_H,    KC_COMM, KC_DOT, KC_SLSH,  KC_RSFT,
-                    KC_LALT, KC_SPC,  KC_LCTL,  KC_ENT, KC_LOWER,       KC_LOWER,    KC_SPC,     KC_RCTL, KC_RALT, KC_RGUI
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,     KC_5,                                    KC_6,       KC_7,    KC_8,    KC_9,   KC_0,  KC_GRV,
+  KC_TAB,   KC_Q,   KC_W,    KC_F,    KC_P,     KC_B,                                    KC_J,       KC_L,    KC_U,    KC_Y,   KC_SCLN,  KC_BSPC,
+  KC_RAISE, KC_A,   KC_R,    KC_S,    KC_T,     KC_G,                                    KC_M,       KC_N,    KC_E,    KC_I,   KC_O,  KC_QUOT,
+  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_D,     KC_V,   KC_MPLY,     KC_MPLY,   KC_K,       KC_H,       KC_COMM, KC_DOT, KC_SLSH,  KC_RSFT,
+                    KC_LALT, KC_SPC,  KC_LCTL,  KC_ENT, KC_LOWER,    KC_LOWER,   KC_SPC,     KC_RCTL, KC_RALT, KC_RGUI
 ),
 
 /*
@@ -1090,7 +1090,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef ENCODER_ENABLE
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 1) {
+    if (index == 0) {
         if (clockwise) {
             if(shift_held) {
                 uint8_t send_data[32] = {0};
@@ -1101,7 +1101,8 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 send_data[0] = 13;
                 raw_hid_send(send_data, sizeof(send_data));
             } else {
-                tap_code(KC_LEFT);
+
+                tap_code(KC_UP);
             }
         } else {
             if(shift_held) {
@@ -1113,26 +1114,30 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 send_data[0] = 12;
                 raw_hid_send(send_data, sizeof(send_data));
             } else {
-                tap_code(KC_RGHT);
+
+                tap_code(KC_DOWN);
+
             }
         }
         //left encoder
-    } else if (index == 0) {
+    } else if (index == 1) {
             if (clockwise) {
                 if(ctrl_held) {
                 tap_code(KC_PGDN);
                 } else if(fn_held || layer_state_is(_LOWER)) {
-                tap_code(KC_MNXT);
+                tap_code(KC_MPRV);
                 } else {
-                tap_code(KC_UP);
+                    tap_code(KC_LEFT);
+
                 }
             } else {
                 if(ctrl_held) {
                 tap_code(KC_PGUP);
                 } else if(fn_held || layer_state_is(_LOWER)) {
-                tap_code(KC_MPRV);
+                tap_code(KC_MNXT);
                 } else {
-                tap_code(KC_DOWN);
+                    tap_code(KC_RGHT);
+
                 }
             }
         }
