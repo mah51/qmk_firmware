@@ -4,7 +4,7 @@
 see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness
 for more options.
 */
-#define UNICODE_SELECTED_MODES UNICODE_MODE_WINCOMPOSE
+// #define UNICODE_SELECTED_MODES UNICODE_MODE_WINCOMPOSE
 #define SPLIT_OLED_ENABLE true
 #define SPLIT_WPM_ENABLE true
 #define OLED_DRIVER_ENABLE true

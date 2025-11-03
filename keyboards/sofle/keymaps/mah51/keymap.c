@@ -6,8 +6,6 @@ enum sofle_layers {
     _QWERTY,
     _COLEMAK_DH,
     _NUMPAD,
-    _EMOJITXT,
-    _MACRO,
     _LOWER,
     _RAISE,
     _ADJUST,
@@ -31,178 +29,13 @@ enum custom_keycodes {
     KC_WINRT,
     KC_LIGHTS,
     KC_MUTEPLAY,
-    KC_XD,
-    KC_E_0,
-    KC_E_1,
-    KC_E_2,
-    KC_E_3,
-    KC_E_4,
-    KC_E_5,
-    KC_E_6,
-    KC_E_7,
-    KC_E_8,
-    KC_E_9,
-    KC_E_STAR,
-    KC_E_HASH,
 };
 
 enum unicode_names {
-  GRIN, // grinning face 😊
-  TJOY, // tears of joy 😂
-  SMILE, // grining face with smiling eyes 😁
-  HEART, // heart ❤
-  EYERT, // smiling face with heart shaped eyes 😍
-  CRY, // crying face 😭
-  SMEYE, // smiling face with smiling eyes 😊
-  UNAMU, // unamused 😒
-  KISS, // kiss 😘
-  HART2, // two hearts 💕
-  WEARY, // weary 😩
-  OKHND, // ok hand sign 👌
-  PENSV, // pensive 😔
-  SMIRK, // smirk 😏
-  RECYC, // recycle ♻
-  WINK, // wink 😉
-  THMUP, // thumb up 👍
-  THMDN, // thumb down 👎
-  PRAY, // pray 🙏
-  PHEW, // relieved 😌
-  MUSIC, // musical notes
-  FLUSH, // flushed 😳
-  CELEB, // celebration 🙌
-  CRY2, // crying face 😢
-  COOL, // smile with sunglasses 😎
-  NOEVS, // see no evil
-  NOEVH, // hear no evil
-  NOEVK, // speak no evil
-  POO, // pile of poo
-  EYES, // eyes
-  VIC, // victory hand
-  BHART, // broken heart
-  SLEEP, // sleeping face
-  SMIL2, // smiling face with open mouth & sweat
-  HUNRD, // 100
-  CONFU, // confused
-  TONGU, // face with tongue & winking eye
-  DISAP, // disappointed
-  YUMMY, // face savoring delicious food
-  CLAP, // hand clapping
-  FEAR, // face screaming in fear
-  HORNS, // smiling face with horns
-  HALO, // smiling face with halo
-  BYE, // waving hand
-  SUN, // sun
-  MOON, // moon
-  SKULL, // skull
-  YEHAW,
-
-  EMOJI_A,
-  EMOJI_B,
-  EMOJI_C,
-  EMOJI_D,
-  EMOJI_E,
-  EMOJI_F,
-  EMOJI_G,
-  EMOJI_H,
-  EMOJI_I,
-  EMOJI_J,
-  EMOJI_K,
-  EMOJI_L,
-  EMOJI_M,
-  EMOJI_N,
-  EMOJI_O,
-  EMOJI_P,
-  EMOJI_Q,
-  EMOJI_R,
-  EMOJI_S,
-  EMOJI_T,
-  EMOJI_U,
-  EMOJI_V,
-  EMOJI_W,
-  EMOJI_X,
-  EMOJI_Y,
-  EMOJI_Z,
-
   PND
 };
 
 const uint32_t PROGMEM unicode_map[] = {
-  [GRIN] = 0x1F600,
-  [TJOY] = 0x1F602,
-  [SMILE] = 0x1F601,
-  [HEART] = 0x2764,
-  [EYERT] = 0x1f60d,
-  [CRY] = 0x1f62d,
-  [SMEYE] = 0x1F60A,
-  [UNAMU] = 0x1F612,
-  [KISS] = 0x1F618,
-  [HART2] = 0x1F495,
-  [WEARY] = 0x1F629,
-  [OKHND] = 0x1F44C,
-  [PENSV] = 0x1F614,
-  [SMIRK] = 0x1F60F,
-  [RECYC] = 0x267B,
-  [WINK] = 0x1F609,
-  [THMUP] = 0x1F44D,
-  [THMDN] = 0x1F44E,
-  [PRAY] = 0x1F64F,
-  [PHEW] = 0x1F60C,
-  [MUSIC] = 0x1F3B6,
-  [FLUSH] = 0x1F633,
-  [CELEB] = 0x1F64C,
-  [CRY2] = 0x1F622,
-  [COOL] = 0x1F60E,
-  [NOEVS] = 0x1F648,
-  [NOEVH] = 0x1F649,
-  [NOEVK] = 0x1F64A,
-  [POO] = 0x1F4A9,
-  [EYES] = 0x1F440,
-  [VIC] = 0x270C,
-  [BHART] = 0x1F494,
-  [SLEEP] = 0x1F634,
-  [SMIL2] = 0x1F605,
-  [HUNRD] = 0x1F4AF,
-  [CONFU] = 0x1F615,
-  [TONGU] = 0x1F61C,
-  [DISAP] = 0x1F61E,
-  [YUMMY] = 0x1F60B,
-  [CLAP] = 0x1F44F,
-  [FEAR] = 0x1F631,
-  [HORNS] = 0x1F608,
-  [HALO] = 0x1F607,
-  [BYE] = 0x1F44B,
-  [SUN] = 0x2600,
-  [MOON] = 0x1F314,
-  [SKULL] = 0x1F480,
-  [YEHAW] = 0x1F920,
-
-  [EMOJI_A] = 0x1F1E6,
-  [EMOJI_B] = 0x1F1E7,
-  [EMOJI_C] = 0x1F1E8,
-  [EMOJI_D] = 0x1F1E9,
-  [EMOJI_E] = 0x1F1EA,
-  [EMOJI_F] = 0x1F1EB,
-  [EMOJI_G] = 0x1F1EC,
-  [EMOJI_H] = 0x1F1ED,
-  [EMOJI_I] = 0x1F1EE,
-  [EMOJI_J] = 0x1F1EF,
-  [EMOJI_K] = 0x1F1F0,
-  [EMOJI_L] = 0x1F1F1,
-  [EMOJI_M] = 0x1F1F2,
-  [EMOJI_N] = 0x1F1F3,
-  [EMOJI_O] = 0x1F1F4,
-  [EMOJI_P] = 0x1F1F5,
-  [EMOJI_Q] = 0x1F1F6,
-  [EMOJI_R] = 0x1F1F7,
-  [EMOJI_S] = 0x1F1F8,
-  [EMOJI_T] = 0x1F1F9,
-  [EMOJI_U] = 0x1F1FA,
-  [EMOJI_V] = 0x1F1FB,
-  [EMOJI_W] = 0x1F1FC,
-  [EMOJI_X] = 0x1F1FD,
-  [EMOJI_Y] = 0x1F1FE,
-  [EMOJI_Z] = 0x1F1FF,
-
   [PND] = 0x00A3,
 
 };
@@ -230,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,   KC_W,    KC_F,    KC_P,     KC_B,                                KC_J,       KC_L,    KC_U,    KC_Y, KC_SCLN,  KC_BSPC,
   KC_RAISE, KC_A,   KC_R,    KC_S,    KC_T,     KC_G,                                KC_M,       KC_N,    KC_E,    KC_I,    KC_O,  KC_QUOT,
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_D,     KC_V,     KC_MUTEPLAY,  KC_LIGHTS,   KC_K,       KC_H,    KC_COMM, KC_DOT, KC_SLSH,  KC_RSFT,
-                    KC_LALT, KC_SPC,  KC_LCTL,  KC_LOWER, KC_ENT,          KC_SPC,   KC_LOWER,   KC_RCTL,KC_RALT, KC_RGUI
+                    KC_LALT, KC_SPC,  KC_LCTL,  KC_ENT, KC_LOWER,          KC_LOWER, KC_SPC,   KC_RCTL,KC_RALT, KC_RGUI
 ),
 
 /*
@@ -256,50 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LSFT,  KC_Z,   KC_X,     KC_C,     KC_V,     KC_B,     KC_MUTEPLAY,  KC_LIGHTS,  KC_N,      KC_M,      KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
                      KC_LALT,  KC_SPC,   KC_LCTL, KC_LOWER, KC_ENT,        KC_SPC,    KC_LOWER,  KC_RCTL,  KC_RALT,  KC_RGUI
 ),
-    /* EMOJI TEXT
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |  1️⃣  |  2️⃣  |  3️⃣  |  4️⃣  |  5️⃣ |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |  🇶  |  🇼  |    |    |    |                    |      |    |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |    |    |    |    |    |-------.    ,-------|     |      |      |      |      |      |
- * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
- * |      |    |   |    |    |    |-------|    |-------|      |      |      |      |      |      |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''---------------------------'
- */
 
-  [_EMOJITXT] = LAYOUT(
-  _______,  KC_E_1,     KC_E_2,     KC_E_3,                 KC_E_4,      KC_E_5,                         KC_E_6,       KC_E_7,       KC_E_8,        KC_E_9,      KC_E_0,     XXXXXXX,
-  _______,  X(EMOJI_Q), X(EMOJI_W), X(EMOJI_F),             X(EMOJI_P),  X(EMOJI_B),                     X(EMOJI_J),   X(EMOJI_L),   X(EMOJI_U),    X(EMOJI_Y),  XXXXXXX,    _______,
-  _______,  X(EMOJI_A), X(EMOJI_R), X(EMOJI_S),             X(EMOJI_T),  X(EMOJI_G),                     X(EMOJI_M),   X(EMOJI_N),   X(EMOJI_E),    X(EMOJI_I),  X(EMOJI_O), XXXXXXX,
-  _______,  X(EMOJI_Z), X(EMOJI_X), X(EMOJI_C),             X(EMOJI_D),  X(EMOJI_V),  XXXXXXX,  XXXXXXX, X(EMOJI_K),   X(EMOJI_H),   XXXXXXX,       XXXXXXX,     XXXXXXX,    _______,
-                      _______,   _______,  _______,  _______,  _______,     _______, _______, _______, _______, _______
-  ),
-    /* MACRO
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |  👏  |  👋  |  💩  |      |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |  ❤  |  😍  |  😂  |  😏  |  😉  |                    |      |  XD  |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |  🤠  |  😎  |  😳  |  😭  |  😊  |-------.    ,-------|     |      |      |      |      |      |
- * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
- * |      |  💀  |  😈 |  😇  |  😞  |  😋  |-------|    |-------|      |      |      |      |      |      |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''---------------------------'
- */
-
- [_MACRO] = LAYOUT(
-  _______,  X(CLAP),    X(BYE),     X(POO),     X(EYES),    XXXXXXX,                        XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  _______,  X(HEART),   X(EYERT),   X(TJOY),    X(SMIRK),   X(WINK),                        XXXXXXX,    KC_XD,      XXXXXXX, XXXXXXX, XXXXXXX, _______,
-  _______,  X(YEHAW),   X(COOL),    X(FLUSH),   X(CRY),     X(SMEYE),                       XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  _______,  X(SKULL),   X(HORNS),   X(HALO),    X(DISAP),   X(YUMMY), XXXXXXX,    XXXXXXX,  XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-                      _______,   _______,  _______,  _______,  _______,     _______, _______, _______, _______, _______
-  ),
 /* LOWER
  * ,-----------------------------------------.                     ,-----------------------------------------.
  * | F12  |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11   |
@@ -318,8 +108,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT(
 KC_F12,  KC_F1,     KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,     KC_F8,     KC_F9,     KC_F10,    KC_F11,
 _______, KC_1,      KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,      KC_8,      KC_9,      KC_0,      KC_DEL,
-_______, KC_DLR,    KC_PLUS,    KC_LPRN,    KC_RPRN,    KC_AT,                              KC_EXLM,    KC_EQL,    KC_MINS,   KC_UNDS,   KC_ASTR,   X(PND),
-_______, KC_EXLM,   KC_HASH,    KC_LCBR,    KC_RCBR,    KC_TILDE,  _______,     _______,    KC_AMPR,    KC_LBRC,   KC_RBRC,   KC_PERC,   KC_BSLS,   _______,
+_______, KC_DLR,    KC_PLUS,    KC_LPRN,    KC_RPRN,    KC_AT,                              KC_EXLM,    KC_EQL,    KC_MINS,   KC_UNDS,   KC_PIPE,   X(PND),
+_______, KC_ASTR,   KC_HASH,    KC_LCBR,    KC_RCBR,    KC_TILDE,  _______,     _______,    KC_AMPR,    KC_LBRC,   KC_RBRC,   KC_PERC,   KC_BSLS,   _______,
                     _______,    _______,    _______,    _______,   _______,     _______,    _______,  _______,  _______,  _______
 ),
 /* RAISE
@@ -340,8 +130,8 @@ _______, KC_EXLM,   KC_HASH,    KC_LCBR,    KC_RCBR,    KC_TILDE,  _______,     
 [_RAISE] = LAYOUT(
   KC_F12,   KC_F1 ,   KC_F2 ,   KC_F3 ,   KC_F4 ,   KC_F5,                            KC_F6,      KC_F7  ,    KC_F8,    KC_F9 ,     KC_F10 ,  KC_F11,
   _______,  KC_INS,   KC_PSCR,  KC_APP,   KC_LSTRT, KC_LEND,                          KC_PGUP,    KC_PRVWD,   KC_UP,    KC_NXTWD,   KC_DLINE, KC_DEL,
-  _______,  KC_CAPS,  LSFT(LWIN(KC_S)),  TT(_NUMPAD), KC_WINLT,  KC_WINRT,            KC_PGDN,   KC_LEFT,    KC_DOWN,  KC_RGHT,    KC_DEL,   KC_BSPC,
-  _______,  KC_ADJUST,  KC_CUT,   KC_COPY,  KC_PASTE, XXXXXXX, _______,      _______,KC_F13,   OSL(_MACRO),TG(_EMOJITXT),   XXXXXXX,    _______,  _______,
+  _______,  KC_CAPS,  LSFT(LWIN(KC_S)),  TT(_NUMPAD), KC_WINLT,  KC_WINRT,            KC_PGDN,   KC_LEFT,    KC_DOWN,  KC_RGHT,    XXXXXXX,   XXXXXXX,
+  _______,  KC_ADJUST,  KC_CUT,   KC_COPY,  KC_PASTE, XXXXXXX, _______,      _______, XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,    _______,  _______,
                       _______,  _______,  _______,  _______, _______,       _______,  _______,    _______,    _______,  _______
 ),
 /* ADJUST
@@ -361,7 +151,7 @@ _______, KC_EXLM,   KC_HASH,    KC_LCBR,    KC_RCBR,    KC_TILDE,  _______,     
 
   [_ADJUST] = LAYOUT(
   XXXXXXX,  XXXXXXX,  XXXXXXX ,   XXXXXXX,  XXXXXXX,  XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX,  XXXXXXX,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  XXXXXXX,  KC_COLEMAK_DH,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX,  XXXXXXX,  CG_TOGG,    XXXXXXX,  XXXXXXX,  XXXXXXX,                        XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
   XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
                       _______,    _______,  _______,  _______,  _______,     _______, _______, _______, _______, _______
@@ -398,7 +188,6 @@ static uint16_t held_shift = 0;
 bool ctrl_held = false;
 static uint16_t held_ctrl = 0;
 bool fn_held = false;
-const char* spam_macro = false;
 
 /* KEYBOARD PET START */
 
@@ -710,12 +499,6 @@ static void print_status_narrow(void) {
         case _LOWER:
             oled_write("Lower", false);
             break;
-        case _MACRO:
-            oled_write("Macro", false);
-            break;
-        case _EMOJITXT:
-            oled_write("Emoji", false);
-            break;
         case _ADJUST:
             oled_write("Adj  ", false);
             break;
@@ -760,11 +543,6 @@ bool oled_task_user(void) {
 
 #endif
 
-void matrix_scan_user(void) {
-    if (spam_macro != false) {
-        send_string(spam_macro);
-    }
-}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -787,13 +565,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     set_single_persistent_default_layer(_QWERTY);
 
                 }
-            }
-            return false;
-        case KC_XD:
-            if (record->event.pressed) {
-                spam_macro = "xd" SS_TAP(X_ENT);
-            } else {
-                spam_macro = false;
             }
             return false;
         case KC_LOWER:
@@ -1029,57 +800,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
               unregister_code(KC_RIGHT);
             }
             break;
-        case KC_E_0:
-            if (record->event.pressed) {
-                send_unicode_string("0️⃣");
-            }
-            break;
-        case KC_E_1:
-            if (record->event.pressed) {
-                send_unicode_string("1️⃣");
-            }
-            break;
-        case KC_E_2:
-            if (record->event.pressed) {
-                send_unicode_string("2️⃣");
-            }
-            break;
-        case KC_E_3:
-            if (record->event.pressed) {
-                send_unicode_string("3️⃣");
-            }
-            break;
-        case KC_E_4:
-            if (record->event.pressed) {
-                send_unicode_string("4️⃣");
-            }
-            break;
-        case KC_E_5:
-            if (record->event.pressed) {
-                send_unicode_string("5️⃣");
-            }
-            break;
-        case KC_E_6:
-            if (record->event.pressed) {
-                send_unicode_string("6️⃣");
-            }
-            break;
-        case KC_E_7:
-            if (record->event.pressed) {
-                send_unicode_string("7️⃣");
-            }
-            break;
-        case KC_E_8:
-            if (record->event.pressed) {
-                send_unicode_string("8️⃣");
-            }
-            break;
-        case KC_E_9:
-            if (record->event.pressed) {
-                send_unicode_string("9️⃣");
-            }
-            break;
-    }
+        }
     return true;
 }
 
