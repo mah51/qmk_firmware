@@ -4,7 +4,7 @@
 enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
     _QWERTY,
-    _COLEMAK_DH,
+    _COLEMAK,
     _NUMPAD,
     _LOWER,
     _RAISE,
@@ -13,10 +13,7 @@ enum sofle_layers {
 };
 
 enum custom_keycodes {
-    KC_COLEMAK_DH = SAFE_RANGE,
-    KC_QWERTY,
-    KC_SWCH_LYT,
-    KC_LOWER,
+    KC_LOWER = QK_USER,
     KC_RAISE,
     KC_ADJUST,
     KC_PRVWD,
@@ -31,6 +28,10 @@ enum custom_keycodes {
     KC_MUTEPLAY,
 };
 
+#define KC_COLEMAK PDF(_COLEMAK)
+#define KC_QWERTY PDF(_QWERTY)
+
+
 enum unicode_names {
   PND
 };
@@ -43,7 +44,7 @@ const uint32_t PROGMEM unicode_map[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
- * COLEMAK_DH
+ * COLEMAK
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  ESC |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  `   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -58,11 +59,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 
-[_COLEMAK_DH] = LAYOUT( \
+[_COLEMAK] = LAYOUT( \
   KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,     KC_5,                                KC_6,       KC_7,    KC_8,    KC_9,    KC_0,  KC_GRV,
   KC_TAB,   KC_Q,   KC_W,    KC_F,    KC_P,     KC_B,                                KC_J,       KC_L,    KC_U,    KC_Y, KC_SCLN,  KC_BSPC,
   KC_RAISE, KC_A,   KC_R,    KC_S,    KC_T,     KC_G,                                KC_M,       KC_N,    KC_E,    KC_I,    KC_O,  KC_QUOT,
-  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_D,     KC_V,     KC_MUTEPLAY,  KC_LIGHTS,   KC_K,       KC_H,    KC_COMM, KC_DOT, KC_SLSH,  KC_RSFT,
+  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_D,     KC_V,     KC_LIGHTS,  KC_MUTEPLAY,   KC_K,       KC_H,    KC_COMM, KC_DOT, KC_SLSH,  KC_RSFT,
                     KC_LALT, KC_SPC,  KC_LCTL,  KC_ENT, KC_LOWER,          KC_LOWER, KC_SPC,   KC_RCTL,KC_RALT, KC_RGUI
 ),
 
@@ -86,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,   KC_1,   KC_2,     KC_3,     KC_4,     KC_5,                               KC_6,      KC_7,      KC_8,     KC_9,   KC_0,    KC_GRV,
    KC_TAB,   KC_Q,   KC_W,     KC_E,     KC_R,     KC_T,                               KC_Y,      KC_U,      KC_I,     KC_O,   KC_P,    KC_BSPC,
    KC_RAISE, KC_A,   KC_S,     KC_D,     KC_F,     KC_G,                               KC_H,      KC_J,      KC_K,     KC_L,   KC_SCLN, KC_QUOT,
-  KC_LSFT,  KC_Z,   KC_X,     KC_C,     KC_V,     KC_B,     KC_MUTEPLAY,  KC_LIGHTS,  KC_N,      KC_M,      KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
+  KC_LSFT,  KC_Z,   KC_X,     KC_C,     KC_V,     KC_B,     KC_LIGHTS,  KC_MUTEPLAY,  KC_N,      KC_M,      KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
                      KC_LALT,  KC_SPC,   KC_LCTL, KC_LOWER, KC_ENT,        KC_SPC,    KC_LOWER,  KC_RCTL,  KC_RALT,  KC_RGUI
 ),
 
@@ -108,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT(
 KC_F12,  KC_F1,     KC_F2,      KC_F3,      KC_F4,      KC_F5,                              KC_F6,      KC_F7,     KC_F8,     KC_F9,     KC_F10,    KC_F11,
 _______, KC_1,      KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,      KC_8,      KC_9,      KC_0,      KC_DEL,
-_______, KC_DLR,    KC_PLUS,    KC_LPRN,    KC_RPRN,    KC_AT,                              KC_EXLM,    KC_EQL,    KC_MINS,   KC_UNDS,   KC_PIPE,   X(PND),
+_______, KC_DLR,    KC_PLUS,    KC_LPRN,    KC_RPRN,    KC_AT,                              KC_EXLM,    KC_EQL,    KC_MINS,   KC_UNDS,   KC_PIPE,   UM(PND),
 _______, KC_ASTR,   KC_HASH,    KC_LCBR,    KC_RCBR,    KC_TILDE,  _______,     _______,    KC_AMPR,    KC_LBRC,   KC_RBRC,   KC_PERC,   KC_BSLS,   _______,
                     _______,    _______,    _______,    _______,   _______,     _______,    _______,  _______,  _______,  _______
 ),
@@ -151,7 +152,7 @@ _______, KC_ASTR,   KC_HASH,    KC_LCBR,    KC_RCBR,    KC_TILDE,  _______,     
 
   [_ADJUST] = LAYOUT(
   XXXXXXX,  XXXXXXX,  XXXXXXX ,   XXXXXXX,  XXXXXXX,  XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX,  KC_COLEMAK_DH,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  XXXXXXX,  KC_COLEMAK,  KC_QWERTY,  XXXXXXX,  XXXXXXX,  XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX,  XXXXXXX,  CG_TOGG,    XXXXXXX,  XXXXXXX,  XXXXXXX,                        XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
   XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,     XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
                       _______,    _______,  _______,  _______,  _______,     _______, _______, _______, _______, _______
@@ -469,7 +470,7 @@ static void print_status_narrow(void) {
         case _QWERTY:
             oled_write("QWRTY", false);
             break;
-        case _COLEMAK_DH:
+        case _COLEMAK:
             oled_write("COLMK", false);
             break;
         case _NUMPAD:
@@ -490,7 +491,7 @@ static void print_status_narrow(void) {
         case _QWERTY:
             oled_write("Base ", false);
             break;
-        case _COLEMAK_DH:
+        case _COLEMAK:
             oled_write("Base", false);
             break;
         case _RAISE:
@@ -546,27 +547,6 @@ bool oled_task_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_QWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
-        case KC_COLEMAK_DH:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_COLEMAK_DH);
-            }
-            return false;
-        case KC_SWCH_LYT:
-            if (record->event.pressed) {
-                if (get_highest_layer(default_layer_state) == _QWERTY) {
-                    set_single_persistent_default_layer(_COLEMAK_DH);
-
-                } else if(get_highest_layer(default_layer_state) == _COLEMAK_DH) {
-                    set_single_persistent_default_layer(_QWERTY);
-
-                }
-            }
-            return false;
         case KC_LOWER:
             fn_held = record->event.pressed;
             if (record->event.pressed) {
